@@ -64,7 +64,7 @@ prompt() {
 		exit_status="${RED}›${COLOREND} "
 	fi
 
-	PS1="\u@\H:\w\n $(parse_git_branch)$(parse_remote_state)$exit_status"
+	PS1="\[\033[01;32m\]\u@\H\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n $(parse_git_branch)$(parse_remote_state)$exit_status"
 }
 
 PROMPT_COMMAND=prompt

@@ -9,6 +9,13 @@ if [ -d "/opt/cxxtest/bin" ] ; then
     PATH="$PATH:/opt/cxxtest/bin"
 fi
 
+#add /opt/tools to $PATH if it exists
+#that's the place where I store micro-tools
+#beeing only one executable, probably selfwritten or something
+if [ -d "/opt/tools" ] ; then
+    PATH="$PATH:/opt/tools"
+fi
+
 export EDITOR=vim
 
 GREEN="\[\e[0;32m\]"

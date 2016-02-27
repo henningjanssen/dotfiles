@@ -16,6 +16,11 @@ if [ -d "/opt/tools" ] ; then
     PATH="$PATH:/opt/tools"
 fi
 
+#add eclipse-mars path to $PATH if it exists
+if [ -d "/opt/eclipse" ] ; then
+    PATH="$PATH:/opt/eclipse"
+fi
+
 export EDITOR=vim
 
 GREEN="\[\e[0;32m\]"

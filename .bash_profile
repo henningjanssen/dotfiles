@@ -21,6 +21,12 @@ if [ -d "/opt/eclipse" ] ; then
     PATH="$PATH:/opt/eclipse"
 fi
 
+#add dtags command if dtags is installed
+if hash python3 2>/dev/null && python3 -c "import dtags" 2>&- || hash python 2>/dev/null && python -c "import dtags" 2>&-; then
+  command -v dtags > /dev/null 2>&1 && eval "`dtags shell bash`"
+fi
+
+
 export EDITOR=vim
 
 GREEN="\[\e[0;32m\]"

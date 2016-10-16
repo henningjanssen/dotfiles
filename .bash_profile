@@ -21,6 +21,11 @@ if [ -d "/opt/eclipse" ] ; then
     PATH="$PATH:/opt/eclipse"
 fi
 
+#add intellij path to $PATH if it exists
+if [ -d "/opt/IntelliJ" ] ; then
+    PATH="$PATH:/opt/IntelliJ/bin"
+fi
+
 #add arcanist to $PATH if it exists
 #and enable tab-completion
 if [ -d "/opt/arcanist/bin" ] ; then

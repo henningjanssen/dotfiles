@@ -21,6 +21,13 @@ if [ -d "/opt/eclipse" ] ; then
     PATH="$PATH:/opt/eclipse"
 fi
 
+#add arcanist to $PATH if it exists
+#and enable tab-completion
+if [ -d "/opt/arcanist/bin" ] ; then
+    PATH="$PATH:/opt/arcanist/bin"
+    source /opt/arcanist/resources/shell/bash-completion
+fi
+
 export EDITOR=vim
 
 GREEN="\[\e[0;32m\]"

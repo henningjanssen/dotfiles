@@ -1,38 +1,3 @@
-
-#add android-studio-bin-path to $PATH if it exists
-if [ -d "/opt/android-studio/bin" ] ; then
-    PATH="$PATH:/opt/android-studio/bin"
-fi
-
-#add cxxtest to $PATH if it exists
-if [ -d "/opt/cxxtest/bin" ] ; then
-    PATH="$PATH:/opt/cxxtest/bin"
-fi
-
-#add /opt/tools to $PATH if it exists
-#that's the place where I store micro-tools
-#beeing only one executable, probably selfwritten or something
-if [ -d "/opt/tools" ] ; then
-    PATH="$PATH:/opt/tools"
-fi
-
-#add eclipse-mars path to $PATH if it exists
-if [ -d "/opt/eclipse" ] ; then
-    PATH="$PATH:/opt/eclipse"
-fi
-
-#add intellij path to $PATH if it exists
-if [ -d "/opt/IntelliJ" ] ; then
-    PATH="$PATH:/opt/IntelliJ/bin"
-fi
-
-#add arcanist to $PATH if it exists
-#and enable tab-completion
-if [ -d "/opt/arcanist/bin" ] ; then
-    PATH="$PATH:/opt/arcanist/bin"
-    source /opt/arcanist/resources/shell/bash-completion
-fi
-
 export EDITOR=vim
 
 GREEN="\[\e[0;32m\]"
@@ -92,3 +57,4 @@ prompt() {
 }
 
 PROMPT_COMMAND=prompt
+

@@ -1,5 +1,7 @@
 export EDITOR=nano
 
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
 GREEN="\[\e[0;32m\]"
 BLUE="\[\e[0;34m\]"
 RED="\[\e[0;31m\]"

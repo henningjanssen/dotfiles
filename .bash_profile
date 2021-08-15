@@ -1,3 +1,22 @@
+
+# set some env-vars
+[[ -e /usr/lib/jvm/default-java ]] && export JAVA_HOME="/usr/lib/jvm/default-java"
+
+[[ -e /usr/lib/x86_64-linux-gnu/libpython3.5m.so.1.0 ]] && export LD_PRELOAD="/usr/lib/x86_64-linux-gnu/libpython3.5m.so.1.0"
+
+[[ -e /opt/Postman/Postman ]] && export PATH="$PATH:/opt/Postman"
+
+[[ -e /mnt/data/projects/helper/scripts ]] && export PATH="$PATH:/mnt/data/projects/helper/scripts"
+
+[[ -e /mnt/data/projects/iserv/scripts ]] && export PATH="$PATH:/mnt/data/projects/iserv/scripts"
+[[ -e /mnt/data/projects/iserv ]] && export ISERV_SRC_DIR="/mnt/data/projects/iserv"
+
+[[ -d /mnt/data/projects/webitdesign/packages/wid-devtools/bin ]] && export PATH="$PATH:/mnt/data/projects/webitdesign/packages/wid-devtools/bin"
+
+[[ -d /usr/local/cuda/bin ]] && export PATH="$PATH:/usr/local/cuda/bin"
+[[ -d /usr/local/cuda/lib64 ]] && export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+[[ -d /usr/local/cuda/include ]] && export LD_LIBRARY_OATH="/usr/local/cuda/include:$LD_LIBRARY_PATH"
+
 export EDITOR=vim
 
 GREEN="\[\e[0;32m\]"
@@ -16,7 +35,7 @@ parse_git_branch() {
 	fi
 
 	if [[ $branch != "" ]]; then
-		if [[ $(git status 2> /dev/null | tail -n1) == "nothing to commit, working directory clean" ]]; then
+		if [[ $(git status 2> /dev/null | tail -n1) == "nothing to commit, working tree clean" ]]; then
 			echo "${GREEN}$branch${COLOREND}"
 		else
 			echo "${RED}$branch${COLROEND}"

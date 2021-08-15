@@ -6,7 +6,7 @@
 
 [[ -e /opt/Postman/Postman ]] && export PATH="$PATH:/opt/Postman"
 
-[[ -e /mnt/data/projects/helper/scripts ]] && export PATH="$PATH:/mnt/data/projects/helper/scripts"
+[[ -e /mnt/data/projects/tools/bin ]] && export PATH="$PATH:/mnt/data/projects/tools/bin"
 
 [[ -e /mnt/data/projects/iserv/scripts ]] && export PATH="$PATH:/mnt/data/projects/iserv/scripts"
 [[ -e /mnt/data/projects/iserv ]] && export ISERV_SRC_DIR="/mnt/data/projects/iserv"

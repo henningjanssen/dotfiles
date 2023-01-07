@@ -8,14 +8,25 @@
 
 [[ -e /mnt/data/projects/tools/bin ]] && export PATH="$PATH:/mnt/data/projects/tools/bin"
 
-[[ -e /mnt/data/projects/iserv/scripts ]] && export PATH="$PATH:/mnt/data/projects/iserv/scripts"
-[[ -e /mnt/data/projects/iserv ]] && export ISERV_SRC_DIR="/mnt/data/projects/iserv"
+[[ -d /mnt/data/projects/gitid/bin ]] && export PATH="$PATH:/mnt/data/projects/gitid/bin"
 
-[[ -d /mnt/data/projects/webitdesign/packages/wid-devtools/bin ]] && export PATH="$PATH:/mnt/data/projects/webitdesign/packages/wid-devtools/bin"
+[[ -d /mnt/data/projects/webitdesign/packages/devtools/bin ]] && export PATH="$PATH:/mnt/data/projects/webitdesign/packages/devtools/bin"
+[[ -d /mnt/data/appimages ]] && export PATH="$PATH:/mnt/data/appimages"
 
 [[ -d /usr/local/cuda/bin ]] && export PATH="$PATH:/usr/local/cuda/bin"
 [[ -d /usr/local/cuda/lib64 ]] && export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
 [[ -d /usr/local/cuda/include ]] && export LD_LIBRARY_OATH="/usr/local/cuda/include:$LD_LIBRARY_PATH"
+
+if [ -d /mnt/data/projects/webitdesign/packages/devtools/bash-include ]; then
+  for inclf in /mnt/data/projects/webitdesign/packages/devtools/bash-include/*; do
+    [ -f "$inclf" ] && . "$inclf"
+  done
+fi
+if [ -d /mnt/data/projects/webitdesign/packages/devtools/bash-completion ]; then
+  for bcf in /mnt/data/projects/webitdesign/packages/devtools/bash-completion/*; do
+    [ -f "$bcf" ] && . "$bcf"
+  done
+fi
 
 export EDITOR=vim
 

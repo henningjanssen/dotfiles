@@ -11,10 +11,10 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+[ -d /mnt/data/projects/dotfiles/oh-my-zsh ] && ZSH_CUSTOM="/mnt/data/projects/dotfiles/oh-my-zsh"
+
 . /usr/share/zsh-antigen/antigen.zsh
-
 antigen use oh-my-zsh
-
 plugins=(
   ag
   autojump
@@ -35,13 +35,14 @@ plugins=(
   ripgrep
   rsync
   timer
+  virtualenv
   zsh-users/zsh-syntax-highlighting
 )
 for p in $plugins; do
   antigen bundle $p
 done
-
-antigen theme jispwoso
 antigen apply
+
+omz theme use berms || omz theme use "jispwoso"
 
 eval "$(direnv hook zsh)"

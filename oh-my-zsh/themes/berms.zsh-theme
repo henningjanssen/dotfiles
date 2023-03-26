@@ -67,7 +67,7 @@ _theme_reloads() {
 add-zsh-hook precmd _theme_reloads
 setopt prompt_subst
 
-PROMPT=$'%{$fg[green]%}%n@%m:%{$reset_color%}%{$fg[blue]%}%/%{$reset_color%}%{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}$(virtualenv_prompt_info) % %{$reset_color%}
+PROMPT=$'%{$fg[green]%}%n@%m:%{$reset_color%}%{$fg[blue]%}%~%{$reset_color%}%{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}$(virtualenv_prompt_info) % %{$reset_color%}
 ${ret_status} %{$reset_color%} '
 
 PROMPT2="%{$fg_bold[black]%}%_> %{$reset_color%}"
